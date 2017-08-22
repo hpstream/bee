@@ -1,0 +1,25 @@
+<layout>
+  <div class="col-12 border-box flex justify-center items-center bg-yellow">
+    <div class="col-12 sm-col-10 md-col-8 lg-col-6 border-box p2 bg-white" style="box-shadow: 0 0 5rem 0 rgba(0,0,0,0.2)">
+      <div class="col-12 border-box border-top">
+        <div class="col-12 border-box border-bottom" v-for="item in list">
+          <div class="col-12 border-box flex justify-center items-center">
+            <div class="col-3 border-box p1 bold">{{ item.time }}：</div>
+            <div class="col-9 border-box p1">
+              <div class="col-12 border-box p1" v-for="(task, index) in item.tasks">
+                <div class="col-12 border-box bold">{{ index + 1 }}. {{ task.title }}</div>
+                <div class="col-12 border-box navy">{{ task.time }} 小时</div>
+                <div class="col-12 border-box gray">{{ task.desc }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="fixed bottom-0 right-0 p2 m2 flex justify-center items-center bg-teal white circle"
+         style="height: 3rem;width: 3rem;box-shadow: 0 0 1.5rem 0 rgba(0,0,0,0.3)">
+        <i class="icon-plus"></i>
+      </a>
+    </div>
+  </div>
+</layout>

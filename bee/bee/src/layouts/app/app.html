@@ -1,0 +1,12 @@
+<div class="col col-12 bg-white black">
+  <div class="col-12 fixed top-0 left-0 right-0 bg-black" style="box-shadow: 0 0 5rem 0 rgba(0,0,0,0.3)">
+    <div class="col-12 flex justify-between items-center">
+      <a class="p2 bold white" @click="goBack"><i class="icon-chevron-left"></i></a>
+      <router-link to="/" class="h1 px2 py1"><i class="icon-bee"></i></router-link>
+      <a class="p2 bold white"><i class="icon-bars"></i></a>
+    </div>
+  </div>
+  <div class="col col-12 bg-white black mt4">
+    <slot></slot>
+  </div>
+</div>

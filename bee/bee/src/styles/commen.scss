@@ -1,0 +1,204 @@
+@import './modules/type-scale/index';
+@import './modules/typography/index';
+@import './modules/layout/index';
+@import './modules/align/index';
+@import './modules/margin/index';
+@import './modules/padding/index';
+//@import './modules/grid/index.css';
+@import './modules/flexbox/index';
+@import './modules/position/index';
+@import './modules/border/index';
+@import './modules/hide/index';
+
+$c-title: #404040; //标题黑
+$c-text: #666666; //正文
+
+$bg: #f5f5f5; //背景灰
+$c-divider: #e9e9e9; //分割线
+$c-border: #d6d6d6; //边框线
+
+
+//按钮四种默认颜色
+$c-default: #fffff;
+$c-primary: #1b95e7;
+$c-success: #00A854;
+$c-warning: #ffBf00;
+$c-danger: #f04134;
+
+//按钮hover颜色
+$h-default: #adadad;
+$h-primary: #177dc9;
+$h-success: #00924c;
+$h-warning: #e09a00;
+$h-danger: #d73435;
+//按钮禁用颜色
+$f-default: #e6e6e6;
+$f-primary: #84c6f2;
+$f-success: #76d0a3;
+$f-warning: #ffdd76;
+$f-danger: #f79992;
+
+/*常用颜色*/
+$white:#fff;
+$red: #ff0000;
+$yellow:#ffff00;
+$gray:#5a5e66;
+$green:#00a854;
+$black-0:#404040;
+$black-1:#666666;
+$black-2:#8b8b8b;
+$black-3:#adadad;
+$black-4:#cacaca;
+
+
+
+.color-white{
+  color:$white ;
+}
+.color-red{
+  color:$red ;
+}
+.color-yellow{
+  color:yellow ;
+}
+.color-gray{
+  color:$gray;
+}
+.color-green{
+  color:$green;
+}
+.color-black0{
+  color: $black-0;
+}
+.color-black1{
+  color: $black-1;
+}
+.color-black2{
+  color: $black-2;
+}
+.color-black3{
+  color: $black-3;
+}
+.color-black4{
+  color: $black-4;
+}
+
+.color-border{
+  border-color: $c-border;
+}
+.color-divider{
+  border-color: $c-divider;
+}
+
+.bg{
+  background:$bg;
+}
+.bg-white{
+  background:$white ;
+}
+.bg-red{
+  background:$red ;
+}
+.bg-yellow{
+  background:$yellow ;
+}
+.bg-gray{
+  background:$gray;
+}
+.bg-green{
+  background:$green;
+}
+
+
+.btn.btn-default {
+  background-color:$c-default ;
+}
+
+.btn.btn-primary {
+  background-color:$c-primary ;
+}
+.btn.btn-success {
+  background-color:$c-success ;
+}
+.btn.btn-warning {
+  background-color:$c-warning ;
+}
+.btn.btn-danger {
+  background-color:$c-danger ;
+}
+
+.btn.btn-default:hover {
+  background-color:$h-default ;
+}
+
+.btn.btn-primary:hover {
+  background-color:$h-primary ;
+}
+.btn.btn-success:hover {
+  background-color:$h-success ;
+}
+.btn.btn-warning:hover {
+  background-color:$h-warning ;
+}
+.btn.btn-danger:hover {
+  background-color:$h-danger ;
+}
+
+.btn.btn-default.disabled {
+  background-color:$f-default ;
+}
+
+.btn.btn-primary.disabled {
+  background-color:$f-primary ;
+}
+.btn.btn-success.disabled {
+  background-color:$f-success ;
+}
+.btn.btn-warning.disabled {
+  background-color:$f-warning ;
+}
+.btn.btn-danger.disabled {
+  background-color:$f-danger ;
+}
+.btn{
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  border-color: #dcdfe6;
+  @extend .color-white;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: 500;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.btn-sm{
+  @extend .btn;
+  padding: 6px 10px;
+  @extend .h14;
+
+}
+.btn-xs{
+  @extend .btn;
+  @extend .h12;
+  padding: 3px 5px;
+
+}
+.btn-lg{
+  @extend .btn;
+  @extend .h18;
+  padding: 15px 25px;
+
+}

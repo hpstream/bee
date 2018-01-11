@@ -5,22 +5,12 @@
 </template>
 
 <script>
-import 'ace-css/css/ace.min.css'
-import './assets/styles/style.css'
-import './assets/fonts/style.css'
-
-// SweetAlert
-require('sweetalert')
-require('sweetalert/dist/sweetalert.css')
-
 export default {
   name: 'app'
 }
 </script>
 
-<style>
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<style lang="scss">
+  @import '~normalize.css/normalize.css';// normalize.css 样式格式化
+  @import './styles/index.scss'; // 全局自定义的css样式
 </style>

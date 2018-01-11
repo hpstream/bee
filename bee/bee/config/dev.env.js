@@ -3,6 +3,6 @@ var prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  API_LOCATION: '"http://localhost:3000/"',
-  CROS_DOMAIN: '"http://localhost:8081"'
+  //BASE_API: '"http:192.168.0.1:8080/fd-court-cube/api"',
+  BASE_API: '"http://localhost:3000"',
 })

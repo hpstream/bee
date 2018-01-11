@@ -1,0 +1,83 @@
+/* Basscss Border */
+/* 边框名称简化 有border 改成 bd */
+.bd {
+  border-style: var(--border-solid);
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+}
+
+.bd-top {
+  border-top-style: var(--border-solid);
+  border-top-width: var(--border-width);
+  border-color: var(--border-color);
+}
+
+.bd-right {
+  border-right-style: var(--border-solid);
+  border-right-width: var(--border-width);
+  border-color: var(--border-color);
+}
+
+/* 边框虚线 */
+.bd-bottom {
+  border-bottom-style: var(--border-solid);
+  border-color: var(--border-color);
+  border-bottom-width: var(--border-width);
+}
+
+.bd-left {
+  border-left-style: var(--border-solid);
+  border-color: var(--border-color);
+  border-left-width: var(--border-width);
+}
+
+.bd-dashed {
+  border-style: var(--border-dashed);
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+}
+
+.bd-dashed-top {
+  border-top-style: var(--border-dashed);
+  border-top-width: var(--border-width);
+  border-color: var(--border-color);
+}
+
+.bd-dashed-right {
+  border-right-style: var(--border-dashed);
+  border-right-width: var(--border-width);
+  border-color: var(--border-color);
+}
+
+.bd-dashed-bottom {
+  border-bottom-style: var(--border-dashed);
+  border-color: var(--border-color);
+  border-bottom-width: var(--border-width);
+}
+
+.bd-dashed-left {
+  border-left-style: var(--border-dashed);
+  border-color: var(--border-color);
+  border-left-width: var(--border-width);
+}
+
+.bd-none { border: 0 }
+
+.rounded { border-radius: var(--border-radius) }
+.circle  { border-radius: 50% }
+
+.rounded-top    { border-radius: var(--border-radius) var(--border-radius) 0 0 }
+.rounded-right  { border-radius: 0 var(--border-radius) var(--border-radius) 0 }
+.rounded-bottom { border-radius: 0 0 var(--border-radius) var(--border-radius) }
+.rounded-left   { border-radius: var(--border-radius) 0 0 var(--border-radius) }
+
+.not-rounded { border-radius: 0 }
+
+:root {
+  --border-color: transparent;
+  --border-width: 1px;
+  --border-radius: 3px;
+  --border-dashed: dashed;
+  --border-solid: solid;
+}
+

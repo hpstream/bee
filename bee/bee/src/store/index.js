@@ -1,20 +1,23 @@
-/**
- * Created by sunday on 04/05/2017.
- */
 import Vue from 'vue'
 import Vuex from 'vuex'
+import app from './modules/app'
+import permission from './modules/permission'
+import tagsView from './modules/tagsView'
+import user from './modules/user'
+import globals from './globals'
+import getters from './getters'
+
 Vue.use(Vuex)
-
-import auth from './modules/auth'
-import post from './modules/post'
-
 const store = new Vuex.Store({
   modules: {
-    auth,
-    post,
+    app,
+    permission,
+    tagsView,
+    user,
+    globals,
+    whiteList: ['login']
   },
-  strict: process.env.NODE_ENV !== 'production'
+  getters
 })
 
 export default store
-

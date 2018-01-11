@@ -1,6 +1,6 @@
-.DS_Store
 node_modules/
+.idea/fd-cloud-webapp.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
 dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

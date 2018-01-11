@@ -1,0 +1,46 @@
+/* Basscss Layout */
+
+.inline       { display: inline }
+.block        { display: block }
+.inline-block { display: inline-block }
+.table        { display: table }
+.table-cell   { display: table-cell }
+
+.hidden { overflow: hidden }
+.hiddenX { overflow-x: hidden }
+.hiddenY { overflow-y: hidden }
+.scrollY { overflow-y: scroll }
+.scrollX { overflow-x: scroll }
+.scroll { overflow: scroll }
+.auto   { overflow: auto }
+.autoY   { overflow-y: auto }
+.autoX   { overflow-x: auto }
+
+
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table
+}
+.clearfix:after { clear: both }
+
+.f-left  { float: left }
+.f-right { float: right }
+
+.fit { max-width: 100% }
+
+.max-width-1 { max-width: var(--width-1) }
+.max-width-2 { max-width: var(--width-2) }
+.max-width-3 { max-width: var(--width-3) }
+.max-width-4 { max-width: var(--width-4) }
+
+.border-box { box-sizing: border-box }
+
+:root {
+  --width-1: 24rem;
+  --width-2: 32rem;
+  --width-3: 48rem;
+  --width-4: 64rem;
+}
+

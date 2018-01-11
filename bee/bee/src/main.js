@@ -1,29 +1,31 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-
-// Vue Configuration
-Vue.config.devtools = process.env.NODE_ENV !== 'production'
-Vue.config.productionTip = process.env.NODE_ENV === 'production'
-
-// Vue Router and Vuex Store Configuration
-import store from './store'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import locale from 'element-ui/lib/locale/lang/zh-CN'
+import App from './App'
 import router from './router'
+import store from './store'
+import * as filters from './filters' // 全局filter
+import '@/icons' // icon
+import '@/permission' // 权限
+import './mock' // 该项目所有请求使用mockjs模拟
+import './utils/common.js'
+import './styles/commen.scss'// 引入常用的cs
 
-window.router = router
-store.commit('AUTH')
+window.Promise = Promise
+Vue.use(ElementUI, { locale })
 
-// Vue Resource Http Configuration
-import http from './http'
-
-// Startup Vue
-import App from './App.vue'
-const app = new Vue({
-  router,
-  store,
-  http,
-  ...App
+// register global utility filters.
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
 })
 
-// Startup The App
-app.$mount('#app')
+Vue.config.productionTip = false
+
+new Vue({
+  el: '#app',
+  router,
+  store,
+  template: '<App/>',
+  components: { App }
+})

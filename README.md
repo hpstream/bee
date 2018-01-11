@@ -14,4 +14,6 @@ bee-api采用nodejs的express框架，mvc模式编写接口提供bee使用。[�
 **注意:bee里面所用的接口来自于bee-api,两个项目需要同时跑起来，才能看到效果。**
 
 我采用的是webstorm 有一个不错的皮肤，有过需要使用的话可以导入进webstorm即可
-<a href='https://github.com/hpstream/bee/blob/master/settings.jar'>皮肤</a>
+
+<a href='https://github.com/hpstream/bee/blob/master/settings.jar'>下载皮肤</a>
+

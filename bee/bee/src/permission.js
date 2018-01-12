@@ -15,16 +15,20 @@ router.beforeEach((to, from, next) => {
     next()
     NProgress.done()
   } else {
-    if (store.state.user.code) {
+    console.log(store.getters.addRouters)
+    if (store.state.user.token) {
       if (flag) {
         flag = false
         router.addRoutes(asyncRouterMap)
+        next({ path: '/' })// router.addRoutes(store.getters.addRouters)
+        NProgress.done()
+      } else {
+        next()// router.addRoutes(store.getters.addRouters)
+        NProgress.done()
       }
-      next()// router.addRoutes(store.getters.addRouters)
-      NProgress.done()
     } else {
       next('/login')// 否则全部重定向到登录页
-      NProgress.done()
+      NProgress.done() // router在hash模式下 手动改变hash 重定向回来 不会触发afterEach 暂时hack方案 ps：history模式下无问题，可删除该行！
     }
   }
   // if (store.state.user.code) { // 判断是否有token

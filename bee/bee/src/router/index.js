@@ -61,7 +61,7 @@ const demoUrl = [
       {
         path: 'standard',
         component: _import('demo/codeStandard'),
-        name: 'color',
+        name: 'standard',
         meta: { title: '项目规范', icon: 'example' }
       },
       {

@@ -1,4 +1,4 @@
-import router from './router'
+import router, { asyncRouterMap } from './router'
 import store from './store'
 import NProgress from 'nprogress' // Progress 进度条
 import 'nprogress/nprogress.css'// Progress 进度条样式
@@ -8,13 +8,25 @@ import 'nprogress/nprogress.css'// Progress 进度条样式
 // const client = ['/client', '/client/personalCenter', '/client/message']
 // const whiteList = ['/login', '/authredirect', ...client]// 不重定向白名单
 
+var flag = true
 router.beforeEach((to, from, next) => {
   NProgress.start() // 开启Progress
-  if (store.state.user.code) {
-   // router.addRoutes(store.getters.addRouters)
+  if (to.path === '/login') {
     next()
+    NProgress.done()
+  } else {
+    if (store.state.user.code) {
+      if (flag) {
+        flag = false
+        router.addRoutes(asyncRouterMap)
+      }
+      next()// router.addRoutes(store.getters.addRouters)
+      NProgress.done()
+    } else {
+      next('/login')// 否则全部重定向到登录页
+      NProgress.done()
+    }
   }
-  next()
   // if (store.state.user.code) { // 判断是否有token
   //   if (to.path === '/login') {
   //     next({ path: '/' })

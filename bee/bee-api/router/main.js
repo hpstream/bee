@@ -18,6 +18,12 @@ router.get('/index',(req,res) =>{
 	res.send('欢迎进入')
 });
 
+router.post('/api/login',(req,res)=>{
+	res.send({
+		token:'123456'
+	})
+})
+
 
 
 

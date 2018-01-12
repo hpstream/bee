@@ -1,12 +1,12 @@
 import { login, logout, getUserInfo } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
+// import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
   state: {
     user: '',
     status: '',
     code: '',
-    token: getToken(),
+    token: '',
     name: '',
     avatar: '',
     introduction: '',
@@ -49,9 +49,10 @@ const user = {
       return new Promise((resolve, reject) => {
         login(username, userInfo.password).then(response => {
           const data = response
-          console.log('data', data)
-          commit('SET_TOKEN', data.access_token)
-          setToken(data.access_token)
+          console.log('data', data) // 获取后台消息
+
+          commit('SET_TOKEN', data.token) // 存储消息
+          // setToken(data.access_token)
           resolve()
         }).catch(error => {
           reject(error)
@@ -81,7 +82,7 @@ const user = {
       return new Promise((resolve, reject) => {
         logout(state.token).then(() => {
           commit('SET_TOKEN', '')
-          removeToken()
+          // removeToken()
           console.log('LogOut', state.token)
           resolve()
         }).catch(error => {
@@ -93,7 +94,7 @@ const user = {
     FedLogOut({ commit }) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
-        removeToken()
+        // removeToken()
         resolve()
       })
     }

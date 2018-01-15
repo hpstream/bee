@@ -38,6 +38,7 @@ function filterAsyncRouter(asyncRouterMap, menuDatas) {
   })
   return accessedRouters
 }
+
 const permission = {
   state: {
     routers: constantRouterMap,

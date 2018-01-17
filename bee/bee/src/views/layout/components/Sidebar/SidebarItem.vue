@@ -41,19 +41,10 @@ export default {
     }
   },
   mounted() {
-    console.log(this.filterSubRoutes(this.routes))
   },
   methods: {
     refreshRoute(item, child) {
       return item.path + '/' + child.path
-    },
-    filterSubRoutes(routes) {
-      return routes.filter((item) => {
-        if (item.children && item.children.length > 0) {
-          this.filterSubRoutes(item.children)
-        }
-        return !item.subRoutes
-      })
     },
     filterHideRoutes(routes, targetValue, TARGET = 'children') {
       for (let i = 0; i < routes.length; i++) {

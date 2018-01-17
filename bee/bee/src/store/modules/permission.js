@@ -57,9 +57,6 @@ const permission = {
       console.log(state)
       return new Promise((resolve, reject) => {
         getTestAsyncRouter().then(res => {
-          console.log(res)
-        })
-        getTestAsyncRouter().then(res => {
           const menuDatas = {}
           const data = res.data
           for (let i = 0; i < data.length; i++) {

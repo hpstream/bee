@@ -35,6 +35,13 @@ const dataDes = {
                : {1:[{id:"1",name:"1"},{id:"2",name:"1"}],2:[{id:"3",name:"2"}]}`,
       des: '将一个JSON数组中根据一个字段进行分类。',
       name: 'this.fd.data.classify'
+    },
+    getBaseLog: {
+      type: 'function',
+      param: 'x:底数，y:对数',
+      result: '返回log以x为底数y的对数',
+      des: '返回log以x为底数y的对数。',
+      name: 'this.fd.data.getBaseLog'
     }
   }
 }

@@ -4,7 +4,8 @@ const data = {
   classify,
   objToArray,
   getRate,
-  listToTree
+  listToTree,
+  getBaseLog
 }
 // 对象的key值转换
 function changeObjKey(data, opt) {
@@ -46,11 +47,11 @@ function getRate(num = 0, total = 0) {
   return rate
 }
 /**
-* List结构转换为树形Json
-* @param {Array} data 需要处理的List
-* @param {Object} options 输出JSON key值配置项，默认{idKey:'permissionId', parentKey:'parentId', childrenKey: 'children'}
-* @return {Object}
-**/
+ * List结构转换为树形Json
+ * @param {Array} data 需要处理的List
+ * @param {Object} options 输出JSON key值配置项，默认{idKey:'permissionId', parentKey:'parentId', childrenKey: 'children'}
+ * @return {Object}
+ **/
 function listToTree(data, options) {
   options = options || {}
   const ID_KEY = options.idKey || 'permissionId'
@@ -93,8 +94,9 @@ function listToTree(data, options) {
     }
     return treeData
   }
-
   return deleteJsonKey(tree)
 }
-
+function getBaseLog(x, y) {
+  return Math.log(y) / Math.log(x)
+}
 export default data

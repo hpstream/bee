@@ -87,7 +87,7 @@
       <el-col :span="4" class="mt2">
         <div class="bd color-border btn btn-danger disabled" style="">btn btn-danger</div>
       </el-col>
-  
+      
       <el-col :span="4" class="mt2">
         <div class="  color-black0 " style="">超小按钮：</div>
       </el-col>

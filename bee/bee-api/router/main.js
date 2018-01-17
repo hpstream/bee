@@ -19,6 +19,7 @@ router.get('/index',(req,res) =>{
 });
 
 router.post('/api/login',(req,res)=>{
+	res.cookie('token', '123456', { expires: new Date(Date.now() + 900000), httpOnly: true });
 	res.send({
 		token:'123456'
 	})

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import fd from '@/api/simple'
+  import { getData } from '@/api/simple'
   import { mapGetters, mapMutations } from 'vuex'
   export default {
     name: '',
@@ -31,7 +31,7 @@
         setGlobalVariable: 'SET_GLOBALSVARIABLE'
       }),
       getData() {
-        fd.getData.then(response => {
+        getData.then(response => {
           const data = response.data
           console.log('data', data)
         }).catch(error => {

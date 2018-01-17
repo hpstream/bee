@@ -1,19 +1,22 @@
 import { login, logout, getUserInfo } from '@/api/login'
-// import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getPermissionMenu } from '@/api/simple'
+import { getToken, setToken, removeToken } from '@/utils/auth'
+import dataMethods from '@/utils/data'
 
 const user = {
   state: {
     user: '',
     status: '',
     code: '',
-    token: '',
+    token: getToken(),
     name: '',
     avatar: '',
     introduction: '',
     roles: [],
     setting: {
       articlePlatform: []
-    }
+    },
+    permissionMenu: []
   },
 
   mutations: {
@@ -40,6 +43,9 @@ const user = {
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles
+    },
+    SET_PERMISSION_MENU: (state, treeList) => {
+      state.permissionMenu = treeList
     }
   },
   actions: {
@@ -49,10 +55,9 @@ const user = {
       return new Promise((resolve, reject) => {
         login(username, userInfo.password).then(response => {
           const data = response
-          console.log('data', data) // 获取后台消息
-
-          commit('SET_TOKEN', data.token) // 存储消息
-          // setToken(data.access_token)
+          console.log('data', data)
+          commit('SET_TOKEN', data.access_token)
+          setToken(data.access_token)
           resolve()
         }).catch(error => {
           reject(error)
@@ -82,7 +87,7 @@ const user = {
       return new Promise((resolve, reject) => {
         logout(state.token).then(() => {
           commit('SET_TOKEN', '')
-          // removeToken()
+          removeToken()
           console.log('LogOut', state.token)
           resolve()
         }).catch(error => {
@@ -94,8 +99,25 @@ const user = {
     FedLogOut({ commit }) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
-        // removeToken()
+        removeToken()
         resolve()
+      })
+    },
+    GetPermissionMenu({ commit }) {
+      return new Promise((resolve, reject) => {
+        getPermissionMenu()
+          .then(res => {
+            const { data } = res.data
+            const treeListdata = dataMethods.listToTree(data, {
+              idKey: 'permissionId',
+              parentKey: 'parentId'
+            })
+            commit('SET_PERMISSION_MENU', treeListdata)
+            resolve()
+          })
+          .catch(error => {
+            reject(error)
+          })
       })
     }
   }

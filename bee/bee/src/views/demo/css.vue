@@ -7,8 +7,8 @@
       size="mini"
       class="mb2"
     >
-      点击跳转子路由2
-	  </el-button>
+    点击跳转子路由2
+    </el-button>
     <router-view></router-view>
     <div class="h18 p2  bg-white bd color-border">编码规范</div>
     <pre class="line-height-4" >
@@ -93,7 +93,7 @@
         </el-col>
       </el-row>
     </div>
-    
+  
     <div>
       <div class="py1 px4 bg-white bold py2">margin与padding的使用(margin以开头，padding以p开头)</div>
       <el-row class="">
@@ -221,7 +221,7 @@
       </el-row>
     </div>
     <div>
-      
+    
       <el-row class='flex' :gutter="20">
         <el-col :span="12">
           <div class="py1 px4 bg-white bold py2">常用属性</div>
@@ -256,8 +256,8 @@
           }
           </pre>
         </el-col>
-        <el-col :span="12" class='hidden'>
-          <div class="py1 px4 bg-white bold py2">表单输入框的使用方式</div>
+          <el-col :span="12" class='hidden'>
+            <div class="py1 px4 bg-white bold py2">表单输入框的使用方式</div>
           <pre class='full-height' v-text='form'>
           
           </pre>
@@ -268,13 +268,13 @@
 </template>
 
 <script>
-  var data = {
-    verticalAlign: `
+var data = {
+  verticalAlign: `
           <div class="align-baseline ">align-baseline</div>
           <div class="align-top ">align-baseline</div>
           <div class="align-middle">align-baseline</div>
           <div class="align-bottom ">align-baseline</div> `,
-    border: `
+  border: `
         <div class="p1 m1 bd color-border">.bd</div>
         <div class="p1 m1 bd-top color-divider">.bd-top</div>
         <div class="p1 m1 bd-right color-border">.bd-right</div>
@@ -285,7 +285,7 @@
         <div class="p1 m1 bd-dashed-right color-border">.bd-right</div>
         <div class="p1 m1 bd-dashed-bottom color-border">.bd-bottom</div>
         <div class="p1 m1 bd-dashed-left color-border">.bd-left</div> `,
-    display: `
+  display: `
             <div class="p1 m1 hide">display: none </div>
             <div class="p1 m1 visible">visibility: hidden;</div>
             <div class="p1 m1 animate-hide">.animate-hide</div>
@@ -294,7 +294,7 @@
             <div class="p1 m1 inline-block">display: inline-block</div>
             <div class="p1 m1 table">display: table </div>
             <div class="p1 m1 table-cell">display: table-cell</div>`,
-    form: ` 表单使用方式
+  form: ` 表单使用方式
             .full {
               width: 100%
             }
@@ -329,17 +329,17 @@
                   <el-input class='full' placeholder='请输入服务名称'></el-input>
                 </div>
             </div>`
+}
+export default {
+  name: '',
+  data() {
+    return data
   }
-  export default {
-    name: '',
-    data() {
-      return data
-    }
-  }
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  
+ 
   pre{
     margin: 0;
     border: 1px solid #e6ebf5;

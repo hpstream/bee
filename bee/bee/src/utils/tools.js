@@ -12,16 +12,9 @@ const tools = {
 const shallowMerge = (target, ...sources) => {
   return Object.assign(target, ...sources)
 }
-// 对象深度继承
 const deepMerge = (target, source) => {
-  for (const key in source) {
-    if (typeof (target[key]) === 'object') {
-      deepMerge(target[key], source[key])
-    } else {
-      target[key] = source[key]
-    }
-  }
-  return target
+  const proto = Object.getPrototypeOf(source)
+  return Object.assign(target, Object.create(proto), source)
 }
 // 对象继承
 function merge(deep, target, ...sources) {

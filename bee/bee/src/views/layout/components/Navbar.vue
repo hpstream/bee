@@ -41,7 +41,7 @@ export default {
       removeToken()
       this.$router.push({ path: '/login' })
       this.$store.dispatch('LogOut').then(() => {
-        location.reload();  // 为了重新实例化vue-router对象 避免bug
+        location.reload()//  为了重新实例化vue-router对象 避免bug
       })
     }
   }

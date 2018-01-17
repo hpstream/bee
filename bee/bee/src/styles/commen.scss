@@ -48,6 +48,16 @@ $yellow:#ffff00;
 $gray:#5a5e66;
 $green:#00a854;
 
+.color-link{
+  color:$c-primary ;
+}
+
+a.color-link:hover {
+  color:$h-primary ;
+  @extend .underline;
+
+}
+
 
 
 
@@ -59,7 +69,7 @@ $green:#00a854;
   color:$red ;
 }
 .color-yellow{
-  color:yellow ;
+  color:$yellow ;
 }
 .color-gray{
   color:$gray;

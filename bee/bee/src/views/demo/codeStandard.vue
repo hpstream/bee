@@ -66,6 +66,9 @@
         setGlobalVariable: 'SET_GLOBALSVARIABLE'
       }),
       translateMDtoHTML() {
+        marked.setOptions({
+          highlight: code => require('highlight.js').highlightAuto(code).value
+        })
         this.markdownStr = marked(str)
       },
       testGlobalVariable() {
@@ -91,7 +94,7 @@
 }
 .demo-contents {
   right: 30px;
-  top: 86px;
+  top: 86px; 
 }
 </style>
 

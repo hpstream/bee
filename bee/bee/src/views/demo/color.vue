@@ -3,48 +3,19 @@
     <div class="p2 bd-bottom color-border">常用字体颜色</div>
     <el-row :gutter="20">
       <el-col :span="4">
-        <div class="m1 pt1 color-title">标题及重要文字</div>
-        <div class="m1 p2 color-title" style="">.color-title</div>
+        <div class="m1 p2 color-black0" style="">.color-black0</div>
       </el-col>
       <el-col :span="4">
-        <div class="m1 pt1 color-text">正文</div>
-        <div class="m1 p2 color-text" style="">.color-text</div>
+        <div class="m1 p2 color-black1" style="">.color-black1</div>
       </el-col>
       <el-col :span="4">
-        <div class="m1 pt1 color-subTitle" >次级文字，默认图标按钮颜色</div>
-        <div class="m1 p2 color-subTitle" style="">.color-subTitle</div>
+        <div class="m1 p2 color-black2" style="">.color-black2</div>
       </el-col>
       <el-col :span="4">
-        <div class="m1 pt1 color-placeholder">输入框提示文字</div>
-        <div class="m1 p2 color-placeholder" style="">.color-placeholder</div>
+        <div class="m1 p2 color-black3" style="">.color-black3</div>
       </el-col>
       <el-col :span="4">
-        <div class="m1 pt1 color-forbid">失效置灰颜色</div>
-        <div class="m1 p2 color-forbid" style="">.color-forbid</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="m1 pt1 ">白色</div>
-        <div class="m1 p2  bg-gray color-white" style="">.color-white</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="m1 pt1 ">red</div>
-        <div class="m1 p2   color-red" style="">.color-red</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="m1 pt1 ">yellow</div>
-        <div class="m1 p2   color-yellow" style="">.color-yellow</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="m1 pt1 ">gray</div>
-        <div class="m1 p2   color-gray" style="">.color-gray</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="m1 pt1 ">gray</div>
-        <div class="m1 p2   color-green" style="">.color-green</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="m1 pt1 ">a标签链接颜色(放在a标签上面)</div>
-        <div class="m1 p2 " style=""><a href="javascrpt:;" class='color-link'>.color-link</a></div>
+        <div class="m1 p2 color-black4" style="">.color-black4</div>
       </el-col>
     </el-row>
     <div class="p2 bd-bottom color-border">分割线与边框线颜色</div>

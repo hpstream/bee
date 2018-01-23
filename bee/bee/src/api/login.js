@@ -1,9 +1,9 @@
 import request from '@/utils/request'
-import { accessedRouterMap } from '@/mock/mockData'
+
 export function login(username, password) {
   console.log('login', username)
   return request({
-    url: '/uaa/api/oauth/token?grant_type=password&username=' + username + '&password=' + password,
+    url: '/api/login',
     method: 'post',
     headers: {
       'Authorization': 'Basic YW5kcm9pZDphbmRyb2lk'
@@ -40,13 +40,5 @@ export function getSelectOption() {
   return request({
     url: 'data/api/codes',
     method: 'get'
-  })
-}
-
-export function getTestAsyncRouter() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(accessedRouterMap)
-    }, 200)
   })
 }

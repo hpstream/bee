@@ -2,21 +2,21 @@
   <div class = "app-container">
     <el-row>
       <el-col :span="12">
-        <el-button type="primary" @click = "getVbar1Data">刷新</el-button>
+        <el-button type="primary" @click = "getVbarData">刷新</el-button>
         <fd-echart :option = optionVbar></fd-echart>
       </el-col>
       <el-col :span="12">
-        <el-button type="primary" @click = "getLine1Data">刷新</el-button>
+        <el-button type="primary" @click = "getLineData">刷新</el-button>
         <fd-echart :option = optionLine></fd-echart>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <el-button type="primary" @click = "getVbar2Data">刷新</el-button>
+        <el-button type="primary" @click = "getVbarData">刷新</el-button>
         <fd-echart :option = optionVbarDataZoom></fd-echart>
       </el-col>
       <el-col :span="12">
-        <el-button type="primary" @click = "getLine2Data">刷新</el-button>
+        <el-button type="primary" @click = "getLineData">刷新</el-button>
         <fd-echart :option = optionLineDataZoom></fd-echart>
       </el-col>
     </el-row>
@@ -46,9 +46,6 @@
           opt: {
             yAxis: {
               name: '案件量'
-            },
-            title: {
-              text: '堆积图的柱状图'
             }
           }
         },
@@ -61,9 +58,6 @@
           opt: {
             yAxis: {
               name: '案件量'
-            },
-            title: {
-              text: '带拖动条的柱图'
             }
           }
         },
@@ -73,9 +67,6 @@
           opt: {
             yAxis: {
               name: '案件量'
-            },
-            title: {
-              text: '拖动条显示后20条'
             }
           }
         },
@@ -86,9 +77,6 @@
           opt: {
             yAxis: {
               name: '案件量'
-            },
-            title: {
-              text: '拖动条显示前20条'
             }
           }
         },
@@ -96,29 +84,19 @@
           data: [],
           type: 'pie',
           opt: {
-            title: {
-              text: '饼图1'
-            }
+
           }
         }
       }
     },
     methods: {
-      getVbar1Data() {
+      getVbarData() {
         this.fd.req({
           type: 'get',
           url: 'api/echarts'
         }).then(response => {
+          console.log('this.optionVbar.data', response.data)
           this.optionVbar.data = response
-        }).catch(error => {
-          console.log('api/charts', error)
-        })
-      },
-      getVbar2Data() {
-        this.fd.req({
-          type: 'get',
-          url: 'api/echarts'
-        }).then(response => {
           this.optionVbarDataZoom.data = response
         }).catch(error => {
           console.log('api/charts', error)
@@ -134,21 +112,12 @@
           console.log('api/charts', error)
         })
       },
-      getLine1Data() {
+      getLineData() {
         this.fd.req({
           type: 'get',
           url: 'echarts'
         }).then(response => {
           this.optionLine.data = response
-        }).catch(error => {
-          console.log('api/charts', error)
-        })
-      },
-      getLine2Data() {
-        this.fd.req({
-          type: 'get',
-          url: 'echarts'
-        }).then(response => {
           this.optionLineDataZoom.data = response
         }).catch(error => {
           console.log('api/charts', error)
@@ -156,10 +125,8 @@
       }
     },
     mounted() {
-      this.getVbar1Data()
-      this.getVbar2Data()
-      this.getLine1Data()
-      this.getLine2Data()
+      this.getVbarData()
+      this.getLineData()
       this.getPieData()
     }
   }

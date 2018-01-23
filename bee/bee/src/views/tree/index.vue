@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import FDPaginationtable from 'fd/tabel'
+import FDPaginationtable from 'fd/Table'
 // import Vue from 'vue'
 export default {
   data() {

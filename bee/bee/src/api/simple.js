@@ -1,15 +1,11 @@
 import { req } from '@/utils/common.js'
-import axios from 'axios'
-const MOCK_BASE_URL = 'https://www.easy-mock.com/mock/5a55b664de90b06840dda803/fd-vue'
-export function getData() {
+const getData = function() {
   return req({
     type: 'get',
     url: 'codes'
   })
 }
-export function getPermissionMenu() {
-  return axios.get(`${MOCK_BASE_URL}/getPermission`)
+const simple = {
+  getData
 }
-export function getPageConfig() {
-  return axios.get(`${MOCK_BASE_URL}/getPageConfig`)
-}
+export default simple

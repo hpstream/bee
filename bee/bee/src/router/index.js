@@ -17,6 +17,7 @@ import Layout from '../views/layout/Layout'
     icon: 'svg-name'             the icon show in the sidebar,
   }
  **/
+console.log('_import("dashboard/index")', _import('dashboard/index'))
 export const constantRouterMap = [
   { path: '/login', component: _import('login/login'), hidden: true },
   // { path: '/client', component: _import('clientViews/resourcesCenter/resourcesCenter'), hidden: true },
@@ -42,7 +43,6 @@ export default new Router({
 const demoUrl = [
   {
     path: '/demo',
-    name: 'demo',
     component: Layout,
     meta: { title: '前端规范', icon: 'example' },
     children: [
@@ -50,29 +50,7 @@ const demoUrl = [
         path: 'css',
         component: _import('demo/css'),
         name: 'css',
-        meta: { title: 'css使用', icon: 'example' },
-        children: [
-          {
-            path: 'color',
-            component: _import('demo/color'),
-            name: 'colora',
-            meta: { title: '隐藏的导航', icon: 'example', subRoutes: true }
-          },
-          {
-            path: 'b',
-            component: _import('demo/permission/test'),
-            name: 'b',
-            meta: { title: '子路由2', icon: 'example', subRoutes: true },
-            children: [
-              {
-                path: 'c',
-                component: _import('demo/permission/test2'),
-                name: 'c',
-                meta: { title: '子路由3', icon: 'example', subRoutes: true }
-              }
-            ]
-          }
-        ]
+        meta: { title: 'css使用', icon: 'example' }
       },
       {
         path: 'color',
@@ -107,20 +85,19 @@ const demoUrl = [
     ]
   },
   {
-    path: '/demo1',
+    path: '/demo',
     component: Layout,
-    name: 'demo1',
     meta: { title: '组件使用', icon: 'example' },
     children: [
       {
         path: 'table',
-        component: _import('table/table'),
+        component: _import('table/index'),
         name: 'table',
         meta: { title: '表格使用', icon: 'example' }
       },
       {
         path: 'tree',
-        component: _import('tree/tree'),
+        component: _import('tree/index'),
         name: 'tree',
         meta: { title: 'tree使用', icon: 'example' }
       },
@@ -132,22 +109,9 @@ const demoUrl = [
       },
       {
         path: 'permission',
-        component: _import('demo/permission/permission'),
+        component: _import('demo/permission'),
         name: 'permission',
-        authority: 'admin',
         meta: { title: '权限控制', icon: 'example' }
-      },
-      {
-        path: 'addPage',
-        component: _import('demo/permission/addRoutes'),
-        name: 'addPage',
-        meta: { title: '增加页面', icon: 'example' }
-      },
-      {
-        path: 'echart',
-        component: _import('demo/echart/echart'),
-        name: 'echart',
-        meta: { title: 'echart', icon: 'example' }
       }
     ]
   }

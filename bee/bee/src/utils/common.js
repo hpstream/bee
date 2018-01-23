@@ -15,33 +15,9 @@ const dataDes = {
   child: {
     changeObjKey: {
       type: 'function',
-      param: 'param1:需要转换的json对象，param2:转换的对应关系 {name:"text"}表示将name的属性值赋予text',
-      result: 'param1:{id:"id",name:"name"},param2:{id:"age",name:"text"} 返回值为{age:"id",text:"name"}',
-      des: '将一个对象的一些属性转换成另一种',
-      name: 'this.fd.data.changeObjKey'
-    },
-    changeListKey: {
-      type: 'function',
-      param: 'param1:需要转换的json数组，param2:转换的对应关系 {name:"text"}表示将name的属性值赋予text',
-      result: 'param1:[{id:"id",name:"name"}],param2:{id:"age",name:"text"} 返回值为[{age:"id",text:"name"}]',
-      des: '将一个JSON数组中每个对象的一些属性转换成另一种',
-      name: 'this.fd.data.changeListKey'
-    },
-    classify: {
-      type: 'function',
-      param: 'param1:需要分类的json数组，param2:key，用来分类的关键字',
-      result: `param1:[{id:"1",name:"1"},{id:"2",name:"1"},{id:"3",name:"2"}]<br>
-               param2:name<br> 
-               : {1:[{id:"1",name:"1"},{id:"2",name:"1"}],2:[{id:"3",name:"2"}]}`,
-      des: '将一个JSON数组中根据一个字段进行分类。',
-      name: 'this.fd.data.classify'
-    },
-    getBaseLog: {
-      type: 'function',
-      param: 'x:底数，y:对数',
-      result: '返回log以x为底数y的对数',
-      des: '返回log以x为底数y的对数。',
-      name: 'this.fd.data.getBaseLog'
+      param: 'param1:{}//需要被转的对象<br/>param2:{originalKey:lastKey}//装换的对应关系',
+      result: '{}//转换后的对象',
+      des: '将对象的属性值转换为另一值'
     }
   }
 }
@@ -49,12 +25,11 @@ const toolsDes = {
   type: 'object',
   des: '工具类方法',
   child: {
-    changeObjKey: {
+    getId: {
       type: 'function',
-      param: 'param1:需要转换的json对象，param2:转换的对应关系 {name:"text"}表示将name的属性值赋予text',
-      result: 'param1:{id:"id",name:"name"},param2:{id:"age",name:"text"} 返回值为{age:"id",text:"name"}',
-      des: '将一个对象的一些属性转换成另一种',
-      name: 'this.fd.data.changeObjKey'
+      param: '无',
+      result: '一个字符串',
+      des: '获取一个Id'
     }
   }
 }
